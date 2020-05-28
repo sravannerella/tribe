@@ -1,0 +1,41 @@
+@import '../../theme.scss';
+
+.candidate{
+    width: 250px;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #eeeeee;
+    transition: all 0.3s ease-in-out;
+
+    .userImg{
+        margin: 0.5rem;
+    }
+
+    &:hover{
+        border: 1px solid map-get($theme-colors, 'primary');
+    }
+
+    p.title{
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+
+    p.subtitle{
+        margin-bottom: 0px;
+    }
+
+    .details{
+        margin: 0.75rem;
+        p{
+            margin-bottom: 0.25rem;
+            font-size: 14px;
+        }
+    }
+
+    .icons{
+        margin: 0.75rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
