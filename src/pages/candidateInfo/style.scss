@@ -1,0 +1,36 @@
+@import '../../theme.scss';
+
+.candidateCard {
+    border: 1px solid #212121;
+    transition: all 0.3s ease-in-out;
+
+    p.heading {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+    .userImg{
+        margin: 0.5rem;
+    }
+    .details{
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 90%;
+        user-select: none;
+
+        .title{
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .info{
+            color: map-get($theme-colors, 'primary');
+            font-weight: bold;
+        }
+    }
+
+
+    // &:hover{
+    //     border: 1px solid map-get($theme-colors, 'primary');
+    // }
+}

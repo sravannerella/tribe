@@ -1,0 +1,49 @@
+@import "../../theme.scss";
+
+.candidate{
+    border-radius: 10px;
+    border: 1px solid #ededed;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    #helper{
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &:hover{
+        @extend .shadow;
+        border: 1px solid map-get($theme-colors, 'primary');
+
+        #helper {
+            visibility: visible !important;
+            opacity: 1;
+        }
+    }
+
+    .candidate-title{
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    .candidate-heading{
+        margin-bottom: 0.25rem;
+        font-size: 10px;
+        font-weight: 600;
+        font-weight: bold;
+    }
+
+    .candidate-body{
+        text-align: center;
+    }
+
+    .item-tab{
+        margin: 4px;
+    }
+}
+
+.icon{
+    width: 25px;
+    height: 25px;
+}

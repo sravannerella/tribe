@@ -3,7 +3,7 @@ import { JobCard } from '../../components/JobCard';
 
 const JobListings = (props) => {
 
-    const [count, setCount] = React.useState(10);
+    const [count, ] = React.useState(10);
     
     return (
         <>

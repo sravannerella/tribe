@@ -3,9 +3,11 @@ import './style.scss';
 import {File, Link, Mail} from 'react-bytesize-icons';
 
 const Candidate = (props) => {
+    const {onClick} = props;
+
     return (
         <>
-            <div className="shadow-sm candidate my-2">
+            <div className="shadow-sm candidate my-2" onClick={onClick}>
 
                 <div className="userImg">
                     <img 

@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import {Button} from 'react-bootstrap';
 import {Search} from 'react-bytesize-icons';
 
-const Filters = (props) => {
-    const { label } = props;
+// const Filters = (props) => {
+//     const { label } = props;
 
-    return (
-        <>
-            <p>{label}</p>
-        </>
-    )
-}
+//     return (
+//         <>
+//             <p>{label}</p>
+//         </>
+//     )
+// }
 
 const SearchBox = (props) => {
-    const { placeholder, label, filters, options } = props;
+    const { placeholder, label } = props;
     
     return (
         <>

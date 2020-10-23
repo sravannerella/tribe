@@ -1,5 +1,12 @@
 .candidates{
     display: grid;
-    grid-template-columns: repeat(auto-fill, 270px );
-    grid-column-gap: 10px;
+    grid-template-columns: repeat(auto-fill, 350px );
+    column-gap: 30px;
+    row-gap: 30px;
 }
+
+.location{
+    font-weight: 500;
+    font-size: 14px;
+}
+

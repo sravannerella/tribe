@@ -4,6 +4,7 @@ import TalentPage from '../pages/talent';
 import Header from '../components/Header';
 import { logo } from '../assets';
 import { Jobs } from '../pages/jobs';
+import { CandidateInfo } from '../pages/candidateInfo';
 
 const Routes = () => {
 	return (
@@ -16,6 +17,7 @@ const Routes = () => {
 					<Switch>
 						<Route exact path="/" component={TalentPage} />
 						<Route path="/jobs" component={Jobs} />
+						<Route path="/candidate" component={CandidateInfo} />
 					</Switch>
 				</div>
 			</div>

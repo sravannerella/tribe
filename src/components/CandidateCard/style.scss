@@ -1,0 +1,114 @@
+@import "../../theme.scss";
+
+.font-40{
+    font-size: 30px;
+}
+
+.candidate-card{
+    background: #ffffff;
+    border: 2px solid #ededed;
+    border-radius: 10px;
+    @extend .shadow-sm;
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+        cursor: pointer;
+        @extend .shadow-lg;
+    }
+
+    .font-10{
+        font-size: 14px;
+        @extend .text-muted;
+    }
+
+    .header{
+        padding: 1.5rem 2rem;
+
+        p {
+            margin-bottom: 5px;
+        }
+
+        .header-box{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 25px;
+        }
+
+        .title{
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 0;
+            color: #212327;
+        }
+
+        .location {
+            font-weight: bold;
+            text-transform: uppercase;
+            @extend .text-muted;
+        }
+
+        .icon{
+            background: #0AB5EC;
+            color: #ffffff;
+            border-radius: 50%;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 40px;
+            font-size: 20px;
+        }
+    }
+
+    .body{
+        padding: 0.5rem 2rem;
+        background: #F8F7FD;
+
+        .item-tab{
+            font-weight: bold;
+            font-size: 12px;
+
+            .candidate-body{
+                display: flex;
+                align-items: center;
+                width: 150px;
+
+                .icon{
+                    font-size: 20px;
+                    margin-top: -10px;
+                }
+            }
+        }
+    }
+
+    .footer{
+        padding: 1.5rem 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        @extend .text-muted;
+        font-size: 12px;
+        display: flex;
+        align-self: center;
+        // transition: all 0.2s ease-in-out;
+
+        // &:hover{
+        //     .icon{
+        //         @extend .ml-2;
+        //     }
+        // }
+        
+        p {
+            padding: 8px 0;
+            margin-bottom: 0;
+            color: #1a73e8;
+        }
+
+        .icon{
+            color: #1a73e8;
+            margin-top: 4px;
+            @extend .ml-1;
+        }
+    }
+}
