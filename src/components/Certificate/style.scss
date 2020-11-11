@@ -1,0 +1,39 @@
+@import "../../icons.scss";
+@import "../../theme.scss";
+
+.certificate {
+    margin-bottom: 1rem;
+
+    .detail {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 13px;
+        // margin-bottom: 1rem;
+
+        p{
+            margin-bottom: 0rem;
+        }
+
+        small{
+            margin-left: 0.25rem;
+        }
+    }
+
+    span.cert{
+        @extend %fa-icon;
+        @extend .fal;
+
+        &:before{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-size: 20px;
+            content: fa-content($fa-var-file-certificate);
+            color: map-get($theme-colors, "primary");
+        }
+    }
+}

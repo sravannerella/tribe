@@ -1,24 +1,81 @@
+@import "../../icons.scss";
+@import "../../theme.scss";
 
-.candidateInfo{
+.modal-body{
 
-    .candidate-title{
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 0;
+    .footer{
+        .title{
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 13px;
+            color: map-get($theme-colors, "primary");
+        }
     }
 
-    .candidate-heading{
-        margin-bottom: 0.25rem;
-        font-size: 10px;
-        font-weight: 600;
-        font-weight: bold;
+    .candidateInfo{
+
+        .candidate {
+            border-radius: 0.6rem;
+        }
+
+        .candidate-title{
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+    
+        .candidate-heading{
+            margin-bottom: 0.25rem;
+            font-size: 10px;
+            font-weight: 600;
+            font-weight: bold;
+        }
+    
+        .candidate-body{
+            text-align: center;
+        }
+
+        .details {
+            height: auto;
+        }
+    
+        .item-tab{
+            margin: 4px;
+        }
     }
 
-    .candidate-body{
-        text-align: center;
-    }
+    .certificates{
+        padding: 1rem;
+        border: 0.5px solid #ddd;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+        @extend .shadow-sm;
 
-    .item-tab{
-        margin: 4px;
+        .title{
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        .verified{
+            @extend %fa-icon;
+            @extend .fas;
+            margin-right: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            &:before{
+                content: fa-content($fa-var-shield-check);
+                color: map-get($theme-colors, "success");
+            }
+        }
+
+        &:hover{
+            cursor: pointer;
+            // @extend .shadow;
+        }
     }
 }

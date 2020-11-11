@@ -1,5 +1,7 @@
 import React from 'react';
 import "./style.scss";
+import * as MulesoftLogo from "../../assets/MuleSoftLogo.png";
+import * as SalesforceLogo from "../../assets/SalesforceLogo.png";
 
 const Tag = (props) => {
     const {name, context} = props;
@@ -17,7 +19,7 @@ const Tag = (props) => {
 export default function(props) {
 
     const {candidate, onClick} = props;
-    const {title, location, pay, payTerm, details, name} = candidate;
+    const {title, location, pay, payTerm, details, name, isMulesoft} = candidate;
     const detailKeys = Object.keys(details);
     const initials = name.split(" ").map(item => item[0]).join("");
 
@@ -25,7 +27,8 @@ export default function(props) {
         <div onClick={onClick} className="candidate">
             <div className="d-flex">
                 <div className="avatar">
-                <p>{initials}</p>
+                    {/* <p>{initials}</p> */}
+                    <img src={isMulesoft ? MulesoftLogo : SalesforceLogo} alt="mulesoft"/>
                 </div>
 
                 <div className="name">
@@ -35,11 +38,13 @@ export default function(props) {
                         <div className="divider"></div>
                         <div className="d-flex">
                             <span className="location"></span>
-                            <p>{location}</p>
+                            <p className="locationName">{location}</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <hr/>
 
             <div className="details">
 
@@ -63,11 +68,13 @@ export default function(props) {
                 
             </div>
 
-            <div className="footer">
+            { onClick && <div className="footer">
+                <hr/>
                 <div className="subtext">
                     <p>More Details</p>
+                    <span className="arrowRight"></span>
                 </div>
-            </div>
+            </div> }
 
         </div>
     )

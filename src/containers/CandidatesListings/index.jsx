@@ -10,29 +10,36 @@ import CandidateDesigner from '../../components/CandidateDesigner';
 
 const CandidatesListings = (props) => {
 
+    const [index, setIndex] = React.useState(0);
+
     const candidates = [{
-        title: "Sr. Mulesoft Developer",
+        title: "Sr. Mulesoft Architect",
         location: "Detroit, MI",
-        pay: 120,
+        pay: "$120",
         payTerm: "hr",
         name: "Sravan Nerella",
+        isMulesoft: true,
         details: {
             "Experience": {
                 "value": 8,
                 "type": "yrs"
             },
-            "Certificates": 4,
+            "Certifications": 4,
             "Projects": 3,
             "Mule Version": {
                 "value": "3, 4",
                 "type": ".x"
             },
-            "Rating": "4"
+            "Rating": "4",
+            "Availability": {
+                value: "2",
+                type: "wks"
+            }
         }
     }, {
         title: "Jr. Mulesoft Developer",
         location: "Boston, MA",
-        pay: 120,
+        pay: "$220",
         payTerm: "hr",
         name: "Sravan Nerella",
         details: {
@@ -40,37 +47,46 @@ const CandidatesListings = (props) => {
                 "value": 2,
                 "type": "yrs"
             },
-            "Certificates": 4,
+            "Certifications": 4,
             "Projects": 3,
             "Mule Version": {
                 "value": "3, 4",
                 "type": ".x"
             },
-            "Rating": "3.5"
+            "Rating": "3.5",
+            "Availability": {
+                value: "1",
+                type: "wks"
+            }
         }
     }, {
         title: "Mulesoft Consultant",
         location: "San Fransico, CA",
-        pay: 120,
+        pay: "$90",
         payTerm: "hr",
+        isMulesoft: true,
         name: "Sravan Nerella",
         details: {
             "Experience": {
                 "value": 10,
                 "type": "yrs"
             },
-            "Certificates": 4,
+            "Certifications": 4,
             "Projects": 13,
             "Mule Version": {
                 "value": "3, 4",
                 "type": ".x"
             },
-            "Rating": "5"
+            "Rating": "5",
+            "Availability": {
+                value: "1",
+                type: "mth"
+            }
         }
     }, {
         title: "Entry Level Mule Developer",
         location: "Detroit, MI",
-        pay: 120,
+        pay: "$50",
         payTerm: "hr",
         name: "Sravan Nerella",
         details: {
@@ -78,20 +94,22 @@ const CandidatesListings = (props) => {
                 "value": 0,
                 "type": "yrs"
             },
-            "Certificates": 2,
+            "Certifications": 2,
             "Projects": 1,
             "Mule Version": {
                 "value": "3, 4",
                 "type": ".x"
             },
-            "Rating": "?"
+            // "Rating": "?",
+            "Availability": "now"
         }
     }]
 
     const [count,] = React.useState(candidates.length);
     const [toggle, setToggle] = React.useState(false);
 
-    const handleClick = () => {
+    const handleClick = (index) => {
+        setIndex(index);
         setToggle(!toggle);
     }
 
@@ -100,9 +118,9 @@ const CandidatesListings = (props) => {
             <h4 className="mt-4">Candidates</h4>
             <p>We found {count} positions matching your query</p>
 
-            <Modal show={toggle} size="xl" animation={true} centered onHide={setToggle}>
+            <Modal show={toggle} size="lg" animation={true} centered onHide={setToggle}>
                 <Modal.Body>
-                    <CandidateBoxInfo candidate={candidates[0]} />
+                    <CandidateBoxInfo candidate={candidates[index]} />
                 </Modal.Body>
             </Modal>
             
@@ -112,13 +130,15 @@ const CandidatesListings = (props) => {
                         return (
                             <CandidateDesigner 
                                 candidate={item} 
-                                key={index} 
-                                onClick={ handleClick }
+                                key={index}
+                                onClick={ handleClick.bind(this, index) }
                             />
                         );
                     }) 
                 }
             </div>
+
+
         </>
     )
 }

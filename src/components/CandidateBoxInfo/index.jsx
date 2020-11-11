@@ -1,26 +1,40 @@
 import React from 'react';
+import CandidateDesigner from '../CandidateDesigner';
+import Certificate from '../Certificate';
 import "./style.scss";
 
 const CandidateBoxInfo = (props) => {
     const { candidate } = props;
-    const {title, location, pay, payTerm, details, name} = candidate;
+    // const {title, location, pay, payTerm, details, name} = candidate;
     return (
         <>
             <div className="candidateInfo">
-                <p className="candidate-title">{title}</p>
-                <p className="text-muted">{location}</p>
+                <CandidateDesigner candidate={candidate} showMoreDetails={false} />
+            </div>
 
-                <div className="d-flex justify-content-between flex-wrap">
-                    {/* { Object.keys(experience).map(item => {
-                        return (
-                            <div className="flex-column">
-                                <h4 className="text-uppercase text-primary font-weight-bold small">{item}</h4>
-                                <h4 className="text-center">{experience[item]}</h4>
-                            </div>
-                        );
-                    }) } */}
+            <div className="d-flex my-3">
+                <div className="certificates w-50">
+                    <div className="d-flex mb-2">
+                        <span className="verified"></span>
+                        <p className="title">Verified Certificates</p>
+                    </div>
+                    <div className="d-flex flex-column">
+                        {new Array(4).fill(10).map(item => {
+                            return <Certificate name="MCD - Level 1" />
+                        })}
+                    </div>
                 </div>
-                
+
+                <div className="projects">
+                    
+                </div>
+            </div>
+
+            <div className="footer">
+                <button className="btn btn-outline-primary">
+                    Save Candidate
+                </button>
+                {/* <p className="title">Save Candidate</p> */}
             </div>
         </>
     )
